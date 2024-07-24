@@ -2,12 +2,12 @@ package com.razafindratelo.backEnd.mapper;
 
 import com.razafindratelo.backEnd.dto.EmployeeDto;
 import com.razafindratelo.backEnd.entity.Employee;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 public class EmployeeMapper {
 
-    public Employee mapToEmployee(EmployeeDto employeeDto){
+    public static Employee mapToEmployee(EmployeeDto employeeDto){
         return new Employee(
                 employeeDto.getEmployeeId(),
                 employeeDto.getFirstName(),
@@ -16,7 +16,7 @@ public class EmployeeMapper {
         );
     }
 
-    public EmployeeDto mapToEmployeeDto(Employee employee){
+    public static EmployeeDto mapToEmployeeDto(Employee employee){
         return new EmployeeDto(
                 employee.getEmployeeId(),
                 employee.getFirstName(),
