@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/infos/employees")
@@ -24,5 +26,11 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDto> getEmployee(@PathVariable("EmpId") long EmpId) {
         EmployeeDto savedEmployee = employeeService.getEmployeeById(EmpId);
         return ResponseEntity.ok(savedEmployee);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
+        List<EmployeeDto> employeesList = employeeService.getAllEmployees();
+        return ResponseEntity.ok(employeesList);
     }
 }
