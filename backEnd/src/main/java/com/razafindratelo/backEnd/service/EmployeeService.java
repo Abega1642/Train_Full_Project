@@ -4,4 +4,6 @@ import com.razafindratelo.backEnd.dto.EmployeeDto;
 
 public interface EmployeeService {
     EmployeeDto createEmployee(EmployeeDto employeeDto);
+
+    EmployeeDto getEmployeeById(long id);
 }
