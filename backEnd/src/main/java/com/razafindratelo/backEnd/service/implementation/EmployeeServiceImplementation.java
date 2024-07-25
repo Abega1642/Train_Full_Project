@@ -50,4 +50,10 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
         return EmployeeMapper.mapToEmployeeDto(updatedEmployee);
     }
+
+    @Override
+    public void deleteEmployee(long id) {
+        EmployeeDto employeeDto = getEmployeeById(id);
+        employeeRepository.deleteById(id);
+    }
 }
