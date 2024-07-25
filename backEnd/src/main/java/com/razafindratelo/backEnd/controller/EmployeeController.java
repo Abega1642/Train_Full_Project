@@ -33,4 +33,10 @@ public class EmployeeController {
         List<EmployeeDto> employeesList = employeeService.getAllEmployees();
         return ResponseEntity.ok(employeesList);
     }
+
+    @PutMapping("{EmpId}")
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable("EmpId") long EmpId, @RequestBody EmployeeDto employeeDto) {
+        EmployeeDto updatedEmployee = employeeService.updateEmployee(EmpId, employeeDto);
+        return ResponseEntity.ok(updatedEmployee);
+    }
 }
