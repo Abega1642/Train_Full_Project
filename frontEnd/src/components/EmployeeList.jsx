@@ -14,11 +14,11 @@ export default function EmployeeList() {
     })
 
   return (
-    <div className="container">
+    <div className="container m-5">
         <h3 className="text-center">
             List of employees
         </h3>
-        <table className="table table-striped table-bordered">
+        <table className="table table-striped table-bordered mt-3">
             <thead>
                 <tr>
                     <th>Empoloyee ID</th>
