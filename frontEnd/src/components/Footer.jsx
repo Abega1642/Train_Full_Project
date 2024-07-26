@@ -1,6 +1,7 @@
 import '../../src/App.css'
 
 export const Footer = () => {
+
   return (
     <footer className='ftr'>
         <span>
