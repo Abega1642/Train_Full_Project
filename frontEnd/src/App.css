@@ -1,5 +1,9 @@
 .ftr {
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100dvw;
     height: 10dvh;
     position: absolute;
