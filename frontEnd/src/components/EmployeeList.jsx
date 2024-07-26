@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { employeesList } from "../service/EmployeeService";
 import { useNavigate } from "react-router-dom";
-import AddEmployee from "./AddEmployee";
 
 export default function EmployeeList() {
     const [EmployeeList, setEmployeeList] = useState([]);
