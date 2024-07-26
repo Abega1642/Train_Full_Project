@@ -1,18 +1,17 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import { employeesList } from "../service/EmployeeService";
+
 export default function EmployeeList() {
-    const list = [
-        {
-            "id": 1,
-            "firstName": "employee",
-            "lastName": "employeeL",
-            "email": "email@gmail.com"
-        },
-        {
-            "id": 2,
-            "firstName": "employee2",
-            "lastName": "employeeL2",
-            "email": "email2@gmail.com"
-        }
-    ]
+    const [EmployeeList, setEmployeeList] = useState([]);
+
+    useEffect(() => {
+        employeesList().then(response => {
+            setEmployeeList(response.data)
+        }).catch(error => {
+            console.error("An error has occured while fetching employees datas", error)
+        });
+    })
 
   return (
     <div className="container">
@@ -30,9 +29,9 @@ export default function EmployeeList() {
             </thead>
             <tbody>
                 {
-                    list.map(employee =>
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
+                    EmployeeList.map(employee =>
+                        <tr key={employee.employeeId}>
+                            <td>{employee.employeeId}</td>
                             <td>{employee.firstName}</td>
                             <td>{employee.lastName}</td>
                             <td>{employee.email}</td>
